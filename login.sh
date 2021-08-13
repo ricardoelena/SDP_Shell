@@ -52,8 +52,8 @@ fi
 #Get arguments
 while getopts 'u:p:s:f:h' opt; do
 	case "${opt}" in
-    		u) user="$OPTARG" ;;
-		p) pass="$OPTARG" ;;
+    		u)	user="$OPTARG" ;;
+		p)	pass="$OPTARG" ;;
 		s) 
 			server="${OPTARG}"
 			base="https://$server:8443/admin" #base expects port 8443
