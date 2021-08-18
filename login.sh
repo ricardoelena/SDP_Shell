@@ -121,10 +121,10 @@ login () {
 
 #funtion in charge of dowload pem cert from controller
 cert () { 
-	curl -k --location --request GET 'https://ricoontroller.packnot.com:8443/admin/certificate-authority/ca' \
+	curl -k --location --request GET $base/certificate-authority/ca \
 	--header 'Accept: application/vnd.appgate.peer-v15+json' | python -m json.tool > data/$server.cert
 	echo -----BEGIN CERTIFICATE----- > cert/$server.pem
-	jq '.certificate' data/ricoontroller.packnot.com.cert | tr -d '"' >> cert/$server.pem
+	jq '.certificate' data/$server.cert | tr -d '"' >> cert/$server.pem
 	echo -----END CERTIFICATE----- >> cert/$server.pem
 }
 
