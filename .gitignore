@@ -1,2 +1,7 @@
 access.txt
 test.sh
+auth
+cert
+data
+idp
+*.swp
